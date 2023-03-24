@@ -8,7 +8,7 @@ from django.shortcuts import redirect, render
 from .forms import WishListForm
 from .models import Cryptocurrency, WishList
 
-API_KEY_NEWS = os.environ.get('API_KEY_NEWS', '')
+API_KEY_NEWS = os.getenv('API_KEY_NEWS')
 url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest"
 parameters = {
     'start': '1',
@@ -17,7 +17,7 @@ parameters = {
 }
 headers = {
     'Accepts': 'application/json',
-    'X-CMC_PRO_API_KEY': os.environ.get('X-CMC_PRO_API_KEY', '')
+    'X-CMC_PRO_API_KEY': os.getenv('X-CMC_PRO_API_KEY')
 }
 
 
