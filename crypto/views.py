@@ -31,12 +31,6 @@ def get_crypto(request):
     for currency in data['data']:
         Cryptocurrency.objects.update_or_create(
             id=currency['id'],
-            # symbol=currency['symbol'],
-            # name=currency['name'],
-            # price=currency['quote']['USD']['price'],
-            # volume=currency['quote']['USD']['volume_24h'],
-            # percent_change=currency['quote']['USD']['percent_change_24h'],
-            # market_cap=currency['quote']['USD']['market_cap'],
             defaults={
                 'symbol': currency['symbol'],
                 'name': currency['name'],
