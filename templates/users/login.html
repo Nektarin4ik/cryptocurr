@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+  <form action="{% url 'users:login' %}" class="form"  method="post">
+    {% csrf_token %}
+      {{ form.username }}
+      {{ form.password }}
+      <input class="submit_class" type="submit" value="Авторизоваться">
+      <a class="a_un_acc" href="{% url 'users:register' %}">Нет аккаунта? Зарегистрируйся!</a>
+  </form>
+{% endblock %}

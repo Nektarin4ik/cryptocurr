@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form action="{% url 'users:profile' user.id %}" method="post">
+        {% csrf_token %}
+
+                        {{ form.first_name }}
+
+                        {{ form.last_name }}
+
+                        {{ form.username }}
+
+                        {{ form.email }}
+                <input class="submit_class" type="submit" value="Сохранить">
+    </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>
+        {% for new in news %}
+            {{ new.0 }}<br/>
+            {{ new.1 }}<br/>
+        Ссылка на полную новость:
+        <a href="{{ new.2 }}">{{ new.2 }}</a><br/>
+        {% endfor %}
+    </p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block header %}
+{% if user.id %}
+<h2><a href="{% url 'users:profile' user.id %}">Личный кабинет</a>|
+<a href="{% url 'users:logout' %}">Выйти из аккаунта</a></h2>
+{% else %}
+        <h2><a href="{% url 'users:login' %}">Авторизоваться</a></h2>
+{% endif %}
+{% endblock %}
+{% block content %}
+    <a href="{% url 'cryptopage:all' %}"><h1>Получить список криптовалют</h1></a>
+    <form action="{% url 'cryptopage:one' %}" method="post">
+    {% csrf_token %}
+    <h3><label for="name">Введите криптовалюту которую хотите найти:</label></h3>
+    <input type="text" id="name" name="name"><br>
+            <button type="submit">Найти</button>
+    </form>
+<h2><a href="{% url 'cryptopage:news' %}">Посмотреть 5 последних новостей криптовалют</a></h2>
+{% if user.id %}
+<h2><a href="{% url 'cryptopage:wishlist' %}"> Посмотреть мой wish list криптовалют </a> </h2>
+{% endif %}
+{% endblock %}
