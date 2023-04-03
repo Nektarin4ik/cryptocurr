@@ -6,12 +6,20 @@ from django.db import models
 
 class Cryptocurrency(models.Model):
     id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=256)
-    symbol = models.CharField(max_length=50)
-    price = models.DecimalField(max_digits=30, decimal_places=6, blank=True, null=True)
-    volume = models.DecimalField(max_digits=30, decimal_places=6, blank=True, null=True)
-    percent_change = models.DecimalField(max_digits=30, decimal_places=6, blank=True, null=True)
-    market_cap = models.DecimalField(max_digits=30, decimal_places=6, blank=True, null=True)
+    name = models.CharField(max_length=256,)
+    symbol = models.CharField(max_length=50,)
+    price = models.DecimalField(max_digits=30, 
+                                decimal_places=6, 
+                                null=True,)
+    volume = models.DecimalField(max_digits=30, 
+                                 decimal_places=6, 
+                                 null=True,)
+    percent_change = models.DecimalField(max_digits=30, 
+                                         decimal_places=6, 
+                                         null=True,)
+    market_cap = models.DecimalField(max_digits=30, 
+                                     decimal_places=6, 
+                                     null=True,)
 
     class Meta:
         ordering = ['id']
